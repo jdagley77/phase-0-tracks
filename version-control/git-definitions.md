@@ -10,3 +10,5 @@ A branch is an extension of the master file. You would use a branch to create an
 A commit records files that are "staged" to your local repository. A good commit message should be clear and descriptive of the updates you have made.
 * What is a merge conflict?
 A merge conflict is when 2 users are working on the same branch, on the same line, and commit differences in their code. 
+
+new edit!

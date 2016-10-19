@@ -1,0 +1,24 @@
+img {
+	margin-right: 100px;
+	margin-top: 100px;
+}
+
+.octopus {
+	z-index: -1;
+	margin-left: 500px;
+	position: relative;
+
+}
+
+.hat {
+	z-index: 1;
+	margin: 20px 0px 0px 490px;
+	position: absolute;
+}
+
+.glasses {
+	z-index: 1;
+	margin: 200px 20px 0px 540px;;
+	position: absolute;
+}
+

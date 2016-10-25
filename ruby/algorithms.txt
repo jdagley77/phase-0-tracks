@@ -1,0 +1,23 @@
+Elevator Algorithm
+
+-for each wall in the elevator
+	-until you find the wall with a series of buttons on it,
+		-turn 90 degrees and walk forward
+		-walk sideways along the wall and touch the wall
+
+	-for each button on the wall
+		-until the button says “5” on it
+			-look at each button, and register the number printed on it
+		-if the number on the wall says “5”, reach out and press the number
+
+—
+
+Task: choose an item from a menu at a restaurant
+	-if menu is in front of you, look at menu
+	-otherwise, ask the server for a menu
+	-for each item listed on the menu
+		-for each item you look at that makes you salivate, record that item
+			-if you would like to eat healthy, choose the item with the least amount of calories
+			-if it is cheat day, choose the item with the most calories
+			-if neither, choose something randomly in between
+		

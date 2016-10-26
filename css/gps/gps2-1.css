@@ -1,3 +1,29 @@
-* {
-	background: blue;
+header {
+  font-family: "Georgia", "Sans-serif";
+  background-image: url("http://fullhdpictures.com/wp-content/uploads/2016/08/Blue-Sky-Desktop.jpg");
+  background-size: 100% 100%;
+} 
+.column-1 {
+  background-color:red;
+  display:inline-block;
+  vertical-align:top;
+  max-width:40%;
+  margin-left: 10%;
+ 
 }
+.column-2 {
+  background-color:gold;
+  display:inline-block;
+  vertical-align:top;
+  max-width:40%;
+  margin-right: 10%;
+  
+}
+footer {
+  background-color:yellow;
+  font-family: "Georgia", "Sans-serif";
+}
+
+/*section {
+  margin: auto;
+}*/

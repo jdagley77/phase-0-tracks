@@ -23,9 +23,6 @@ health_insurance = gets.chomp
 #Otherwise, print “Results inconclusive.”
 #Print the result at the end of the survey.
 
-#if age = true, AND (eats_garlic = true OR wants_insurance = true) print "probably a vampire"
-
-
 
 correct_age = false
 current_year = 2016
@@ -56,16 +53,20 @@ elsif health_insurance == "n"
 	puts "doesn't want insurance"
 end 
 
-if user_name == "Drake Cula" || user_name == "Tu Fang"
-	puts "Definitely a vampire"
-end
+
 
 
 case
 when correct_age && (eats_garlic || ins_signup)
-	puts "probably not a vampire."
+	puts "Probably not a vampire."
 when !correct_age && (!eats_garlic || !ins_signup)
 	puts "Probably a vampire."
-
+#issue: incorrect age, no garlic and no ins signup print "probably a vampire"
+when !correct_age && !eats_garlic && !ins_signup
+	puts "Almost certainly a vampire."
+when user_name == "Drake Cula" || user_name == "Tu Fang"
+	puts "Definitely a vampire."
+else puts "Results inconclusive."
 end
+
 

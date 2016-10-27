@@ -56,7 +56,16 @@ elsif health_insurance == "n"
 	puts "doesn't want insurance"
 end 
 
-if user_name == "Drake Cula" || "Tu Fang"
+if user_name == "Drake Cula" || user_name == "Tu Fang"
 	puts "Definitely a vampire"
+end
+
+
+case
+when correct_age && (eats_garlic || ins_signup)
+	puts "probably not a vampire."
+when !correct_age && (!eats_garlic || !ins_signup)
+	puts "Probably a vampire."
+
 end
 

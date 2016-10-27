@@ -1,7 +1,7 @@
 
 
 puts "What is your name?"
-name = gets.chomp
+user_name = gets.chomp
 
 puts "How old are you?"
 age = gets.to_i
@@ -29,9 +29,22 @@ health_insurance = gets.chomp
 
 correct_age = false
 current_year = 2016
-if current_year - birth_year = age
+
+if (current_year - birth_year) == age
 	correct_age = true
 	puts "correct age"
+else
+	correct_age = false 
+	puts "incorrect age"
+end
+
+eats_garlic = false
+if garlic_question == "y"
+	eats_garlic = true
+	puts "eats garlic"
+elsif garlic_question == "n"
+	eats_garlic = false
+	puts "does not eat garlic"
 end
 
 

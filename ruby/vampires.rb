@@ -47,4 +47,12 @@ elsif garlic_question == "n"
 	puts "does not eat garlic"
 end
 
+ins_signup = false
+if health_insurance == "y"
+	ins_signup = true
+	puts "wants insurance"
+elsif health_insurance == "n"
+	ins_signup = false
+	puts "doesn't want insurance"
+end 
 

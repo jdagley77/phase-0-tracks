@@ -56,3 +56,7 @@ elsif health_insurance == "n"
 	puts "doesn't want insurance"
 end 
 
+if user_name == "Drake Cula" || "Tu Fang"
+	puts "Definitely a vampire"
+end
+

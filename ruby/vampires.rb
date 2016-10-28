@@ -2,7 +2,7 @@ puts "how many employees will be processed?"
 employee_count = gets.to_i
 current_count = 0
 
-while current_count <= employee_count 
+while current_count < employee_count 
 
 
 puts "What is your name?"
@@ -29,7 +29,7 @@ health_insurance = gets.chomp
 #Print the result at the end of the survey.
 
 
-correct_age = false
+correct_age = ""
 current_year = 2016
 
 if (current_year - birth_year) == age

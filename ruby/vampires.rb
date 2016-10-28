@@ -57,11 +57,15 @@ final_result = ""
 
 if user_name == "Drake Cula" || user_name == "Tu Fang"
 	final_result = "Definitely a vampire."
-elsif correct_age && (eats_garlic || ins_signup)
+elsif correct_age && 
+	(eats_garlic || ins_signup)
 	final_result = "Probably not a vampire."
-elsif !correct_age && !eats_garlic && !ins_signup
+elsif !correct_age && 
+	!eats_garlic && 
+	!ins_signup
 	final_result = "Almost certainly a vampire."
-elsif !correct_age && (!eats_garlic || !ins_signup)
+elsif !correct_age && 
+	(!eats_garlic || !ins_signup)
 	final_result = "Probably a vampire."
 else final_result = "Results inconclusive."
 end

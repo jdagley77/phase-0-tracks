@@ -21,6 +21,24 @@ puts "Would you like to enroll in the company’s health insurance (y/n)?"
 health_insurance = gets.chomp
 
 
+allergies = ""
+until allergies == "done"
+puts "please name any allergies. type 'done' when finished."
+	allergies = gets.chomp
+	if allergies == "sunshine"
+	puts "Probably a vampire."
+end	
+end
+	
+
+#As long as the allergy is not “sunshine,” continue the loop for as long as is needed. 
+#If at any point the employee lists “sunshine” as an allergy, skip directly 
+#to the result of “Probably a vampire.”
+
+
+#when the employees says "done", stop the loop. they can list as many allergies as they want 1 at a time
+#until that point.
+
 #If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
 #If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
 #If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”

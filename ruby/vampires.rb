@@ -33,7 +33,7 @@ else
 	puts "incorrect age"
 end
 
-eats_garlic = false
+eats_garlic = ""
 if garlic_question == "y"
 	eats_garlic = true
 	puts "eats garlic"
@@ -42,7 +42,7 @@ elsif garlic_question == "n"
 	puts "does not eat garlic"
 end
 
-ins_signup = false
+ins_signup = ""
 if health_insurance == "y"
 	ins_signup = true
 	puts "wants insurance"

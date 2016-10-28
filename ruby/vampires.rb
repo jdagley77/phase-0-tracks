@@ -1,3 +1,10 @@
+puts "how many employees will be processed?"
+employee_count = gets.to_i
+current_count = 0
+
+while current_count <= employee_count 
+
+
 puts "What is your name?"
 user_name = gets.chomp
 
@@ -72,5 +79,8 @@ end
 
 puts final_result
 
+current_count += 1
+
+end
 
 

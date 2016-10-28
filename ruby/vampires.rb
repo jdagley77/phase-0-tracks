@@ -1,5 +1,3 @@
-
-
 puts "What is your name?"
 user_name = gets.chomp
 
@@ -55,18 +53,20 @@ end
 
 
 
+final_result = ""
 
-case
-when correct_age && (eats_garlic || ins_signup)
-	puts "Probably not a vampire."
-when !correct_age && (!eats_garlic || !ins_signup)
-	puts "Probably a vampire."
-#issue: incorrect age, no garlic and no ins signup print "probably a vampire"
-when !correct_age && !eats_garlic && !ins_signup
-	puts "Almost certainly a vampire."
-when user_name == "Drake Cula" || user_name == "Tu Fang"
-	puts "Definitely a vampire."
-else puts "Results inconclusive."
+if user_name == "Drake Cula" || user_name == "Tu Fang"
+	final_result = "Definitely a vampire."
+elsif correct_age && (eats_garlic || ins_signup)
+	final_result = "Probably not a vampire."
+elsif !correct_age && !eats_garlic && !ins_signup
+	final_result = "Almost certainly a vampire."
+elsif !correct_age && (!eats_garlic || !ins_signup)
+	final_result = "Probably a vampire."
+else final_result = "Results inconclusive."
 end
+
+puts final_result
+
 
 

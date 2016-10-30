@@ -24,6 +24,13 @@ health_insurance = gets.chomp
 #ask the user to name any allergies using a loop
 #the should be able to type multiple words for their response
 #the program should know when they've type "done" and stop running
+#....
+#ask about allergies and put response under array allergies. 
+#as long as the user doesnt say sunshine keep asking.
+#if they do say sunshine the results is prob a vampire, and end the program, get out of the larger loop.
+#when the users hits done stop running the loop and move on.
+
+
 allergies = []
 
 
@@ -31,40 +38,11 @@ puts "please name any allergies. type 'done' when finished."
 while allergies != "done" && 
 	allergies != "sunshine"
 	allergies = gets.chomp	
-	
 end
 	
 break if allergies == "sunshine"
 		
 
-
-	
-
-#ask about allergies and put response under array allergies. 
-#as long as the user doesnt say sunshine keep asking.
-#if they do say sunshine the results is prob a vampire, and end the program, get out of the larger loop.
-#when the users hits done stop 
-#running the loop and move on.
-
-
-
-	
-#continue asking what the user's allergies are
-#if the response is "sunshine", stop asking the user
-#and then make final_result = “Probably a vampire.”
-
-
-
-
-#when the employees says "done", stop the loop. they can list as many allergies as they want 1 at a time
-#until that point.
-
-#If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
-#If the employee got their age wrong, and hates garlic bread or waives insurance, the result is “Probably a vampire.”
-#If the employee got their age wrong, hates garlic bread, and doesn’t want insurance, the result is “Almost certainly a vampire.”
-#Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
-#Otherwise, print “Results inconclusive.”
-#Print the result at the end of the survey.
 
 
 correct_age = ""

@@ -26,14 +26,26 @@ health_insurance = gets.chomp
 #the program should know when they've type "done" and stop running
 allergies = []
 
+
 puts "please name any allergies. type 'done' when finished."
-while allergies != "done"
-	allergies = gets.chomp
-	if allergies == "sunshine"
-	puts = "Probably a vampire."
-	end
-	employee_count = 0
+while allergies != "done" && 
+	allergies != "sunshine"
+	allergies = gets.chomp	
+	
 end
+	
+break if allergies == "sunshine"
+		
+
+
+	
+
+#ask about allergies and put response under array allergies. 
+#as long as the user doesnt say sunshine keep asking.
+#if they do say sunshine the results is prob a vampire, and end the program, get out of the larger loop.
+#when the users hits done stop 
+#running the loop and move on.
+
 
 
 	
@@ -78,7 +90,7 @@ elsif health_insurance == "n"
 	ins_signup = false
 end 
 
-
+puts "=============================="
 
 final_result = ""
 
@@ -97,10 +109,15 @@ elsif !correct_age &&
 else final_result = "Results inconclusive."
 end
 
-puts final_result
+
 
 current_count += 1
 
 end
+
+if allergies == "sunshine"
+	final_result = "Probably a vampire."
+end
+puts final_result
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."

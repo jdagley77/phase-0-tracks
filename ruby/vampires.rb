@@ -1,4 +1,4 @@
-puts "how many employees will be processed?"
+puts "How many employees will be processed?"
 employee_count = gets.to_i
 current_count = 0
 
@@ -68,7 +68,7 @@ elsif health_insurance == "n"
 	ins_signup = false
 end 
 
-puts "=============================="
+puts "================================="
 
 final_result = ""
 

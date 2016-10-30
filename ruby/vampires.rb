@@ -21,19 +21,39 @@ puts "Would you like to enroll in the company’s health insurance (y/n)?"
 health_insurance = gets.chomp
 
 
-allergies = ""
-until allergies == "done"
+#ask the user to name any allergies using a loop
+#the should be able to type multiple words for their response
+#the program should know when they've type "done" and stop running
+allergies = []
+
+
 puts "please name any allergies. type 'done' when finished."
-	allergies = gets.chomp
-	if allergies == "sunshine"
-	puts "Probably a vampire."
-end	
+while allergies != "done" && 
+	allergies != "sunshine"
+	allergies = gets.chomp	
+	
 end
 	
+break if allergies == "sunshine"
+		
 
-#As long as the allergy is not “sunshine,” continue the loop for as long as is needed. 
-#If at any point the employee lists “sunshine” as an allergy, skip directly 
-#to the result of “Probably a vampire.”
+
+	
+
+#ask about allergies and put response under array allergies. 
+#as long as the user doesnt say sunshine keep asking.
+#if they do say sunshine the results is prob a vampire, and end the program, get out of the larger loop.
+#when the users hits done stop 
+#running the loop and move on.
+
+
+
+	
+#continue asking what the user's allergies are
+#if the response is "sunshine", stop asking the user
+#and then make final_result = “Probably a vampire.”
+
+
 
 
 #when the employees says "done", stop the loop. they can list as many allergies as they want 1 at a time
@@ -52,31 +72,25 @@ current_year = 2016
 
 if (current_year - birth_year) == age
 	correct_age = true
-	puts "correct age"
 else
 	correct_age = false 
-	puts "incorrect age"
 end
 
 eats_garlic = ""
 if garlic_question == "y"
 	eats_garlic = true
-	puts "eats garlic"
 elsif garlic_question == "n"
 	eats_garlic = false
-	puts "does not eat garlic"
 end
 
 ins_signup = ""
 if health_insurance == "y"
 	ins_signup = true
-	puts "wants insurance"
 elsif health_insurance == "n"
 	ins_signup = false
-	puts "doesn't want insurance"
 end 
 
-
+puts "=============================="
 
 final_result = ""
 
@@ -95,10 +109,15 @@ elsif !correct_age &&
 else final_result = "Results inconclusive."
 end
 
-puts final_result
+
 
 current_count += 1
 
 end
 
+if allergies == "sunshine"
+	final_result = "Probably a vampire."
+end
+puts final_result
 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."

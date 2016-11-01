@@ -114,6 +114,10 @@ puts "============="
 #A method that will remove items until the condition is false, then stops 
 #(you may not find a perfectly working option for the hash, and that's okay).
 
+#A method that will take out items from the array or hash when it evaluates to true
+#and stop taking them out when the item in array or hash becomes false 
+#(you may not find a perfectly working option for the hash, and that's okay).
+
 
 def new_numbers
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -132,4 +136,5 @@ states_and_capitals = {
 
 states_and_capitals.delete_if {|state, capital| capital.length > 6}
 puts states_and_capitals
+
 

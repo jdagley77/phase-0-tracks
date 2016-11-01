@@ -29,27 +29,33 @@ call to demonstrate whether they have been modified or not.
 p cheese
 p crackers
 
-puts "============="
+puts "iterate through the cheese array: "
 
 cheese.each do |type| 
 	puts type
 end
 
-puts "============="
+puts "Use map to capitalize each item in cheese array and print the new array: "
 
-cap_cheese = cheese.map! do |type| 
-	puts type.capitalize
+cheese.map! do |type| 
+	type.capitalize
 end
 
-puts "============="
+p cheese
+
+cheese.each do |type| 
+	puts type
+end
+
+puts "Use each to iterate through crackers hash: "
 
 crackers.each do |type|
 	puts type
 end
 
-puts "============="
+puts "print the cheese array and crackers hash again: "
 
-p cap_cheese
+p cheese
 p crackers
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -105,6 +111,8 @@ puts states_and_capitals
 
 puts "============="
 
+#A method that will remove items until the condition is false, then stops 
+#(you may not find a perfectly working option for the hash, and that's okay).
 
 
 def new_numbers
@@ -121,4 +129,7 @@ states_and_capitals = {
 	Nevada: "Reno"
 }
 
+
+states_and_capitals.delete_if {|state, capital| capital.length > 6}
+puts states_and_capitals
 

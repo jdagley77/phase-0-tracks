@@ -66,7 +66,19 @@ design_details[:birth_year] = birth_year
 
 p design_details
 
+puts "Would you like to update any of the information that was asked (type 'none' to skip)?"
+update = gets.chomp
 
+if update == "user_name"
+	"user_name".to_sym 
+
+	puts "Please type the updated information in user_name, and hit 'enter'."
+	new_user_name = gets.chomp
+	design_details[:user_name] = new_user_name
+
+end
+
+p design_details
 
 
 

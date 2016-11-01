@@ -69,13 +69,64 @@ p design_details
 puts "Would you like to update any of the information that was asked (type 'none' to skip)?"
 update = gets.chomp
 
+if update == "none"
+	p design_details
+	exit
+end
+
 if update == "user_name"
 	"user_name".to_sym 
 
 	puts "Please type the updated information in user_name, and hit 'enter'."
 	new_user_name = gets.chomp
 	design_details[:user_name] = new_user_name
+end
 
+if update == "children"
+	"children".to_sym 
+
+	puts "Please type the updated information in children, and hit 'enter'."
+	new_children = gets.chomp
+	design_details[:children] = new_children
+end
+
+if update == "cats"
+	"cats".to_sym 
+
+	puts "Please type the updated information in cats, and hit 'enter'."
+	new_cats = gets.chomp
+if new_cats == "y"
+	new_cats = true
+elsif new_cats == "n"
+	new_cats = false
+end
+	design_details[:cats] = new_cats
+end
+
+
+if update == "style"
+	"style".to_sym 
+
+	puts "Please type the updated information in style, and hit 'enter'."
+	new_style = gets.chomp
+	design_details[:style] = new_style
+end
+
+
+if update == "color"
+	"color".to_sym 
+
+	puts "Please type the updated information in color, and hit 'enter'."
+	new_color = gets.chomp
+	design_details[:color] = new_color
+end
+
+if update == "birth_year"
+	"birth_year".to_sym 
+
+	puts "Please type the updated information in birth_year, and hit 'enter'."
+	new_birth_year = gets.chomp
+	design_details[:birth_year] = new_birth_year
 end
 
 p design_details

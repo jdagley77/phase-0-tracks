@@ -52,6 +52,73 @@ puts "============="
 p cap_cheese
 p crackers
 
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+numbers.delete_if {|number| number.even?}
+puts numbers
+
+states_and_capitals = {
+	California: "Sacramento",
+	New_York: "Albany",
+	Texas: "Austin",
+	Nevada: "Reno"
+}
+
+states_and_capitals.delete_if {|state, capital| capital =~ /[A]/}
+puts states_and_capitals
+
+puts "============="
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+numbers.keep_if {|number| number.even?}
+puts numbers
+
+states_and_capitals = {
+	California: "Sacramento",
+	New_York: "Albany",
+	Texas: "Austin",
+	Nevada: "Reno"
+}
+
+states_and_capitals.keep_if {|state, capital| capital =~ /[A]/}
+
+puts states_and_capitals
+
+puts "============="
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+numbers.select! {|number| number > numbers[5]}
+puts numbers
+
+states_and_capitals = {
+	California: "Sacramento",
+	New_York: "Albany",
+	Texas: "Austin",
+	Nevada: "Reno"
+}
+
+states_and_capitals.keep_if {|state, capital| capital.length > 4}
+
+puts states_and_capitals
+
+puts "============="
+
+
+
+def new_numbers
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+	numbers.drop_while {|number| number < 4}
+end
+
+puts new_numbers
+
+states_and_capitals = {
+	California: "Sacramento",
+	New_York: "Albany",
+	Texas: "Austin",
+	Nevada: "Reno"
+}
 
 

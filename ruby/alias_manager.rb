@@ -42,8 +42,19 @@ p name_swap(real_name)
 #convert name array to an array of individual letters (so i can iterate through them)
 
 
+
 name_string = name_swap(real_name).join
 p name_string.split("")
+
+
+name_string = name_swap(real_name).join
+p name_string.split("")
+
+vowels = ['a', 'e', 'i', 'o', 'u']
+
+#iterate through the name array of individual letters. 
+#if the letter in the name array is included in the vowels array
+#find the next letter in the vowels array and replace it with the original letter in the names array
 
 
 def next_vowel

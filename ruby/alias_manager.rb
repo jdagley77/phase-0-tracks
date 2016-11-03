@@ -41,23 +41,25 @@ p name_swap(real_name)
 
 #convert name array to an array of individual letters (so i can iterate through them)
 name_string = name_swap(real_name).join
-p name_string.split("")
+p name_string
+name_split = name_string.split('')
+p name_split #name of the new name array that is made up of individual letters
+
+#join the array back together
+
+
+#write a method so the vowels array gets mapped to another array that adds
+#an index to the argument
 
 vowels = ['a', 'e', 'i', 'o', 'u']
-
-#iterate through the name array of individual letters. 
-#if the letter in the name array is included in the vowels array
-#find the next letter in the vowels array and replace it with the original letter in the names array
-
-def next_vowel
-	vowels.each {|i| i.next}
-
-
-end 
+p vowels
+new_name_array = name_split.map do |letter| if vowels.include?(letter)
+p vowels.rotate(1)[vowels.index(letter)]
+else p letter
+end
+puts new_name_array
 
 
-	
-def next_consonant
-	consonants = "bcdfghjklmnpqrstvwxyz"
-	consonants.next
-end 
+ #create a new array by going through each letter of the name array
+	 #if any letter in the name array is included in the vowel array
+	 end	

@@ -16,14 +16,22 @@ PSEUDOCODE
 
 #unless real_name == 'quit', continue asking the question.
 
+
+
 real_name = ""
 
 while real_name != 'quit'
 puts "what is the name of the spy (type 'quit' to exit the program)?"
 real_name = gets.chomp
+
 if real_name == 'quit'
 	exit
 end
+
+#add given name to a hash called directory
+directory = {}
+directory.merge!(given_name: real_name)
+
 
 def name_swap(real_name)
 #pass in a real name to the method, separate first and last name and turn into an array:
@@ -67,9 +75,16 @@ end
 end
 one_string_name = vowel_advance(name_string)
 
+def name_separate(name)
+vowel_adv_array = name.scan(/[A-Z][a-z]+/)
+vowel_adv_array.join(" ")
+end
 
-vowel_adv_array = vowel_advance(name_string).scan(/[A-Z][a-z]+/)
-p vowel_adv_array.join(" ")
+name_separate(one_string_name)
+
+directory.merge!(spy_name: name_separate(one_string_name))
+
+puts "#{directory[:given_name]} is also known as #{directory[:spy_name]}"
 
 if real_name == 'quit'
 	exit

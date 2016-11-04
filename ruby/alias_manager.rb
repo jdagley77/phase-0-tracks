@@ -14,8 +14,16 @@ PSEUDOCODE
 	
 =end
 
-puts "what is the name of the spy?"
+#unless real_name == 'quit', continue asking the question.
+
+real_name = ""
+
+while real_name != 'quit'
+puts "what is the name of the spy (type 'quit' to exit the program)?"
 real_name = gets.chomp
+if real_name == 'quit'
+	exit
+end
 
 def name_swap(real_name)
 #pass in a real name to the method, separate first and last name and turn into an array:
@@ -35,7 +43,7 @@ name_swap(real_name)
 
 
 name_string = name_swap(real_name).join
-p name_string
+
 #pass in name_string which will be the string of the name
 #turn this string into an array and call it new_name_array
 #make a new array using .map, which looks through each letter in new_name_array
@@ -48,7 +56,6 @@ p name_string
 
 def vowel_advance(name_string)
 name_split = name_string.split('')
-p name_split
 vowels = ['a', 'e', 'i', 'o', 'u']
 
 new_name_array = name_split.map {|letter| if vowels.include?(letter)
@@ -64,6 +71,10 @@ one_string_name = vowel_advance(name_string)
 vowel_adv_array = vowel_advance(name_string).scan(/[A-Z][a-z]+/)
 p vowel_adv_array.join(" ")
 
+if real_name == 'quit'
+	exit
+end
 
 
+end
 

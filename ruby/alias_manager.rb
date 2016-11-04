@@ -48,14 +48,22 @@ p name_string
 
 def vowel_advance(name_string)
 name_split = name_string.split('')
+p name_split
 vowels = ['a', 'e', 'i', 'o', 'u']
 
-new_name_array = name_split.map do |letter| if vowels.include?(letter)
-vowels.rotate(1)[vowels.index(letter)]
-else letter
+new_name_array = name_split.map {|letter| if vowels.include?(letter)
+vowels.rotate[vowels.index(letter)]
+else letter 
 end
-	p new_name_array
+}
+	new_name_array.join
+end
+one_string_name = vowel_advance(name_string)
 
-end
-end
-p vowel_advance("test")
+
+vowel_adv_array = vowel_advance(name_string).scan(/[A-Z][a-z]+/)
+p vowel_adv_array.join(" ")
+
+
+
+

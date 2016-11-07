@@ -31,7 +31,7 @@ health_insurance = gets.chomp
 #when the users hits done stop running the loop and move on.
 
 
-allergies = []
+allergies_list = []
 
 
 puts "please name any allergies. type 'done' when finished."

@@ -4,7 +4,6 @@ current_count = 0
 
 while current_count < employee_count 
 
-
 puts "What is your name?"
 user_name = gets.chomp
 
@@ -20,7 +19,6 @@ garlic_question = gets.chomp
 puts "Would you like to enroll in the company’s health insurance (y/n)?"
 health_insurance = gets.chomp
 
-
 #ask the user to name any allergies using a loop
 #the should be able to type multiple words for their response
 #the program should know when they've type "done" and stop running
@@ -29,8 +27,6 @@ health_insurance = gets.chomp
 #as long as the user doesnt say sunshine keep asking.
 #if they do say sunshine the results is prob a vampire, and end the program, get out of the larger loop.
 #when the users hits done stop running the loop and move on.
-
-
 
 allergies = ""
 
@@ -41,7 +37,6 @@ while allergies != "done" && allergies != "sunshine"
 end
 	
 break if allergies == "sunshine"
-		
 
 correct_age = ""
 current_year = 2016
@@ -52,35 +47,15 @@ else
 	correct_age = false 
 end
 
+eats_garlic = garlic_question == 'y'
 
+ins_signup = health_insurance == 'y'
 
-eats_garlic = ""
-if eats_garlic = garlic_question == 'y'
-eats_garlic = true
-elsif eats_garlic = garlic_question == 'n'
-eats_garlic = false
-end
-
-=begin
-eats_garlic = ""
-if garlic_question == "y"
-	eats_garlic = true
-elsif garlic_question == "n"
-	eats_garlic = false
-end
-=end
-
-ins_signup = ""
-if ins_signup = health_insurance == "y"
-	ins_signup = true
-elsif ins_signup = health_insurance == "n"
-	ins_signup = false
-end 
 
 puts "================================="
 
 
-result = ""
+result = "Results inconclusive."
 
 if correct_age && 
 	(eats_garlic || ins_signup)
@@ -101,14 +76,6 @@ if !correct_age &&
 if user_name == "Drake Cula" || user_name == "Tu Fang"
 	result = "Definitely a vampire."
 	end
-
-#if (garlic_question != 'y' && garlic_question != 'n') || (health_insurance != 'y' && health_insurance != 'n')
-#	result = "Results inconclusive."
-#end
-
-#else result = "Results inconclusive."
-#end
-
 
 puts result
 

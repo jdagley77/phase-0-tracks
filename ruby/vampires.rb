@@ -31,19 +31,17 @@ health_insurance = gets.chomp
 #when the users hits done stop running the loop and move on.
 
 
-allergies_list = []
 
+allergies = ""
 
 puts "please name any allergies. type 'done' when finished."
-while allergies != "done" && 
-	allergies != "sunshine"
+while allergies != "done" && allergies != "sunshine"
 	allergies = gets.chomp	
+	
 end
 	
 break if allergies == "sunshine"
 		
-
-
 
 correct_age = ""
 current_year = 2016
@@ -54,48 +52,71 @@ else
 	correct_age = false 
 end
 
+
+
+eats_garlic = ""
+if eats_garlic = garlic_question == 'y'
+eats_garlic = true
+elsif eats_garlic = garlic_question == 'n'
+eats_garlic = false
+end
+
+=begin
 eats_garlic = ""
 if garlic_question == "y"
 	eats_garlic = true
 elsif garlic_question == "n"
 	eats_garlic = false
 end
+=end
 
 ins_signup = ""
-if health_insurance == "y"
+if ins_signup = health_insurance == "y"
 	ins_signup = true
-elsif health_insurance == "n"
+elsif ins_signup = health_insurance == "n"
 	ins_signup = false
 end 
 
 puts "================================="
 
-final_result = ""
 
-if user_name == "Drake Cula" || user_name == "Tu Fang"
-	final_result = "Definitely a vampire."
-elsif correct_age && 
+result = ""
+
+if correct_age && 
 	(eats_garlic || ins_signup)
-	final_result = "Probably not a vampire."
-elsif !correct_age && 
+	result = "Probably not a vampire."
+	end
+
+if !correct_age && 
+	(!eats_garlic || !ins_signup)
+	result = "Probably a vampire."
+	end
+
+if !correct_age && 
 	!eats_garlic && 
 	!ins_signup
-	final_result = "Almost certainly a vampire."
-elsif !correct_age && 
-	(!eats_garlic || !ins_signup)
-	final_result = "Probably a vampire."
-else final_result = "Results inconclusive."
-end
+	result = "Almost certainly a vampire."
+	end
+
+if user_name == "Drake Cula" || user_name == "Tu Fang"
+	result = "Definitely a vampire."
+	end
+
+#if (garlic_question != 'y' && garlic_question != 'n') || (health_insurance != 'y' && health_insurance != 'n')
+#	result = "Results inconclusive."
+#end
+
+#else result = "Results inconclusive."
+#end
 
 
+puts result
 
 current_count += 1
-
 end
 
 if allergies == "sunshine"
-	final_result = "Probably a vampire."
+	puts result = "Probably a vampire."
 end
-puts final_result
 
 puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."

@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :ethnicity
+	attr_accessor :gender, :age
+
 	def initialize(gender, ethnicity)
 		p "Initializing Santa instance ..."
 		@gender = gender
@@ -18,11 +21,6 @@ class Santa
 	["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	end
 
-
-	def age(age=0)
-		@age = age
-	end
-
 	def celebrate_birthday(age)
 		@age = age + 1
 	end 
@@ -33,24 +31,54 @@ class Santa
 		@reindeer_ranking.delete(reindeer_name)
 		@reindeer_ranking << reindeer_name
 	end
-	def change_gender(gender)
-		@gender = gender
-	end
+	
+	#def change_gender(new_gender)
+	#	@gender = new_gender
+	#end
 end
 
+
+
+#SANTA PROGRAM
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+new_santa_instances = []
+
+	25.times do |i| new_santa_instances << Santa.new(example_genders.sample[i], example_ethnicities.sample[i])
+	new_santa_instances[i].age = rand(0..140)
+			end
+
+#driver code			
+p new_santa_instances
+p new_santa_instances[20].age
+#p joe = Santa.new("Irish", "undecided")
+#joe.age = 23
+#p joe
+
+=begin
+OLD DRIVER CODE:
 joe = Santa.new("male", "African")
 michael = Santa.new("male", "Irish")
 joe.speak
 joe.eat_milk_and_cookies("snickerdoodle")
 p joe.age
-p joe.celebrate_birthday(1)
+p joe.celebrate_birthday(3)
+p joe.reindeer_ranking
 p joe.get_mad_at("Prancer")
-p michael.reindeer_ranking
+p joe.gender
+p joe.change_gender("female")
+p joe.age
+p joe.ethnicity
+p joe = Santa.new("male", "African")
+p joe.ethnicity
+p joe.gender = "undecided"
+p joe.gender
+p joe.age
+=end
 
 
-
-
-=begin
+#DIFFERENT WAYS TO INITIALIZE SANTA INSTANCES:
 santas = []
 santas << Santa.new("agender", "black")
 santas << Santa.new("female", "Latino")
@@ -66,9 +94,9 @@ example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer n
 example_genders.length.times do |i|
   santas << Santa.new(example_genders[i], example_ethnicities[i])
 end
-=end
 
-=begin
+
+
 i = 0
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
@@ -80,8 +108,8 @@ end
 
 p santas
 
-=end
-=begin
+
+
 gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 ethnicity = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
@@ -97,5 +125,5 @@ santas << Santa.new(gender[7], ethnicity[7])
 
 p santas
 
-=end
+
 

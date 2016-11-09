@@ -3,6 +3,7 @@ class Santa
 		p "Initializing Santa instance ..."
 		@gender = gender
 		@ethnicity = ethnicity
+		@reindeer_ranking = reindeer_ranking
 	end
 
 	def speak
@@ -14,8 +15,9 @@ class Santa
 	end
 
 	def reindeer_ranking
-	@reindeer_ranking = reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+	["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 	end
+
 
 	def age(age=0)
 		@age = age
@@ -28,8 +30,8 @@ class Santa
 	def get_mad_at(reindeer_name)
 		#delete the reindeer's name in the reindeer ranking array
 		#and add it to the end of the reindeer ranking array
-		reindeer_ranking.delete(reindeer_name)
-		reindeer_ranking << reindeer_name
+		@reindeer_ranking.delete(reindeer_name)
+		@reindeer_ranking << reindeer_name
 	end
 	def change_gender(gender)
 		@gender = gender
@@ -37,12 +39,15 @@ class Santa
 end
 
 joe = Santa.new("male", "African")
+michael = Santa.new("male", "Irish")
 joe.speak
 joe.eat_milk_and_cookies("snickerdoodle")
 p joe.age
 p joe.celebrate_birthday(1)
 p joe.get_mad_at("Prancer")
-p joe.change_gender("male")
+p michael.reindeer_ranking
+
+
 
 
 =begin

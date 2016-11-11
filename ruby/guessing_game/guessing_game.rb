@@ -12,23 +12,40 @@ the user gets a congratulatory message if they win and a taunting message if the
 =end
 
 #PROGRAM
-#create a class for users. 
-#We will be creating 2 instances of users, each with different words
+#Create a class for the game
+#The instances in the game class will be words and users
+	#The states for each word instance will be different strings
+	#each user does not need particular states
 
 
-class User
-	attr_reader :word
-	attr_accessor :guess_count
-	def initialize(word)
+class Word_Game
+	attr_reader :guess_count, :user
+	attr_accessor :word
+	def initialize
 		@word = word
 		@guess_count = 3
+		@is_over = false
+		@user
+		@word_guess
 	end
 
 	def word_to_blanks(word)
-		@word.length
+		#return the same number of _ _ _ _ spaces as number of letters in the word player 1 
+		#typed (the word is called )
+
+		word_array = @word.scan /\w/
+		word_array.map! do |ltr|
+			ltr = " _ "
+		end
+		word_array.join
 	end
 
-	def guess_number
+	def check_word(word)
+
+
+	end
+
+	def guess_number(word)
 		if @word.length <= 5
 			@guess_count = 4
 		elsif @word.length <= 10
@@ -39,14 +56,35 @@ class User
 
 end
 
-#DRIVER CODE
-#create user1
-user1 = User.new
-#ask user1 to enter a word for their opponent to guess
-puts "Type a word for Player 2 to guess!"
-word = gets.chomp
 
-#create user2
-user2 = User.new
-#ask user2 to guess the word that user1 entered
-puts "Player 2: Try and guess the word that Player 1 entered. You have #{guess_number} of guesses" 
+puts "Welcome to the Word Game!"
+#DRIVER CODE
+#create user1 and user2 as new instances
+game = Word_Game.new
+user1 = Word_Game.new
+user2 = Word_Game.new
+#ask user1 to enter a word for their opponent to guess
+puts "Player 1: Please type a word for Player 2 to guess!"
+mystery_word = gets.chomp
+user1.word = mystery_word
+
+#create a new instance of the word
+
+
+#ask user2 to guess the word that user1 entered, and display the same number of _ _ _ _ as number 
+#of letters in that word
+puts "Player 2: try and guess the word that Player 1 entered. 
+-------------------------------------------------------------
+
+#{user1.word_to_blanks(mystery_word)}
+-------------------------------------------------------------
+You have #{game.guess_count} guesses"
+word_guess = gets.chomp 
+user2.word = word_guess
+#compare the word player 1 entered (called mystery_word), with the word that player 2 
+#guessed (Called word_guess).
+#if any letters in word
+
+
+
+

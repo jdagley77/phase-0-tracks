@@ -14,8 +14,8 @@ the user gets a congratulatory message if they win and a taunting message if the
 =end
 
 #BUSINESS LOGIC
-class Player
-	attr_accessor :ltr_guess_list, :word, :word_guess, :ltr_guess, :guess_count, :is_over
+class Game
+	attr_accessor :ltr_guess_list, :word, :word_guess, :ltr_guess, :guess_count, :is_over, :hidden_word
 	attr_reader :display
 	def initialize
 		@word = word
@@ -30,15 +30,8 @@ class Player
 		@ltr_guess_list.push(ltr_guess)
 	end
 
-	def display(word, ltr_guess) #make every letter in the array that hasn't been guessed a ' _ '
-	    @word_array = @word.scan /\w/
-	    @word_array.map! do |word_letter|
-	    	if word_letter != ltr_guess
-	    		' _ '
-	    	else ltr_guess
-	    	end
-	    end
-	    p @word_array
+	def display(word) #make every letter in the array that hasn't been guessed a ' _ ''
+	    word.gsub(/[a-zA-Z]/, ' _ ') 
 	end
 
 	def guess_repeat_check(ltr)
@@ -50,27 +43,28 @@ end
 
 
 #DRIVER CODE
-player1 = Player.new
-player2 = Player.new
+game = Game.new
+
 
 puts "Player 1: type a word!"
 new_word = gets.chomp
-player1.word = new_word
+game.word = new_word
 #player 1's word is now stored as an attribute for their word variable
+game.display(new_word)
 puts "Player 2: guess a letter!"
 guess = gets.chomp #the letter guessed
 #add that letter into an array of letter guesses
-player2.ltr_add(guess)
-p player2.ltr_guess_list
-player1.display(new_word, guess)
+game.ltr_add(guess)
+p game.ltr_guess_list
+p game.replace_ltr_display(new_word)
 
 
 while !@is_over 
 	puts "Guess another letter?"
-	player1.display(new_word, guess)
+	game.display(new_word)
 	guess = gets.chomp
-	player2.ltr_add(guess)
-	p player2.ltr_guess_list
+	game.ltr_add(guess)
+	p game.ltr_guess_list
 end
 
 

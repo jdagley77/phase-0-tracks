@@ -30,17 +30,15 @@ class Player
 		@ltr_guess_list.push(ltr_guess)
 	end
 
-	def display(word, ltr_guess)
+	def display(word, ltr_guess) #make every letter in the array that hasn't been guessed a ' _ '
 	    @word_array = @word.scan /\w/
-	    p @word_array
-	    @word_array.each do |word_letter|
+	    @word_array.map! do |word_letter|
 	    	if word_letter != ltr_guess
-	    		word_letter == ' _ '
-	    	elsif word_letter == ltr_guess
-	    		word_letter == ltr_guess
+	    		' _ '
+	    	else ltr_guess
 	    	end
 	    end
-
+	    p @word_array
 	end
 
 	def guess_repeat_check(ltr)
@@ -64,7 +62,7 @@ guess = gets.chomp #the letter guessed
 #add that letter into an array of letter guesses
 player2.ltr_add(guess)
 p player2.ltr_guess_list
-
+player1.display(new_word, guess)
 
 
 while !@is_over 

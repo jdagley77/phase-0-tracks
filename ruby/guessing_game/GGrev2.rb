@@ -15,12 +15,36 @@ the user gets a congratulatory message if they win and a taunting message if the
 
 #BUSINESS LOGIC
 class Player
-	attr_accessor :ltr_guess_list, :word, :word_guess
+	attr_accessor :ltr_guess_list, :word, :word_guess, :ltr_guess, :guess_count, :is_over
+	attr_reader :display
 	def initialize
-		#puts "initializing"
-		@word
+		@word = word
 		@word_guess
-		@ltr_guess
+		@ltr_guess_list = []
+		@ltr_guess = ltr_guess
+		@guess_count = 0
+		@is_over = false
+	end
+
+	def ltr_add(ltr_guess)
+		@ltr_guess_list.push(ltr_guess)
+	end
+
+	def display(word, ltr_guess)
+	    @word_array = @word.scan /\w/
+	    p @word_array
+	    @word_array.each do |word_letter|
+	    	if word_letter != ltr_guess
+	    		word_letter == ' _ '
+	    	elsif word_letter == ltr_guess
+	    		word_letter == ltr_guess
+	    	end
+	    end
+
+	end
+
+	def guess_repeat_check(ltr)
+		#if the letter is included in the ltr_guess_list, don't add 1 to guess count
 	end
 
 end
@@ -32,6 +56,24 @@ player1 = Player.new
 player2 = Player.new
 
 puts "Player 1: type a word!"
-player1.word = gets.chomp
+new_word = gets.chomp
+player1.word = new_word
 #player 1's word is now stored as an attribute for their word variable
-puts "Player 2: guess "
+puts "Player 2: guess a letter!"
+guess = gets.chomp #the letter guessed
+#add that letter into an array of letter guesses
+player2.ltr_add(guess)
+p player2.ltr_guess_list
+
+
+
+while !@is_over 
+	puts "Guess another letter?"
+	player1.display(new_word, guess)
+	guess = gets.chomp
+	player2.ltr_add(guess)
+	p player2.ltr_guess_list
+end
+
+
+

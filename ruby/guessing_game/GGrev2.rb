@@ -15,7 +15,7 @@ the user gets a congratulatory message if they win and a taunting message if the
 
 #BUSINESS LOGIC
 class Game
-	attr_accessor :ltr_guess_list, :word, :word_guess, :ltr_guess, :guess_count, :is_over
+	attr_accessor :ltr_guess_list, :word, :word_guess, :ltr_guess, :guess_count, :is_over, :hidden_word
 	attr_reader :display
 	def initialize
 		@word = word
@@ -31,7 +31,7 @@ class Game
 	end
 
 	def display(word) #make every letter in the array that hasn't been guessed a ' _ ''
-	    p word.gsub(/[a-zA-Z]/, ' _ ') 
+	    word.gsub(/[a-zA-Z]/, ' _ ') 
 	end
 
 	def guess_repeat_check(ltr)
@@ -56,7 +56,7 @@ guess = gets.chomp #the letter guessed
 #add that letter into an array of letter guesses
 game.ltr_add(guess)
 p game.ltr_guess_list
-
+p game.replace_ltr_display(new_word)
 
 
 while !@is_over 

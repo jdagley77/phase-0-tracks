@@ -7,20 +7,19 @@
 //Add driver code that tests your function on a few arrays.
 
 //create an array of different words
-//iterate through the items in the array
-//for each item (string) in the array, count the number of letters in each item
-//create an empty hash
-//for each string in the array, store it as a key in the object
-//store each integer as a value in an object
-//how can i sort the items of the hash by their values?
-//return the last value in the hash
+//iterate through the items in the words array
+//for each string length in the words array
+//if the item's length is greater than the item before it, put it in a new array
+//print the last item in the new array
+
 
 
 var words = ["one", "two", "three", "four", "five", "six", "seven"];
+var newArray = []
 
-var wordObj = {}
 
 for (var i = 0; i < words.length; i++) {  //iterate through the array of words
-	i.length
 
 };
+
+

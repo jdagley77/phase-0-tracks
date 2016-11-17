@@ -67,5 +67,6 @@ while !@is_over
 	p game.ltr_guess_list
 end
 
+#code review
 
 

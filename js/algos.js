@@ -6,20 +6,26 @@
 //Note that "some string".length will do what you expect in JS.
 //Add driver code that tests your function on a few arrays.
 
-//create an array of different words
-//iterate through the items in the words array
-//for each string length in the words array
-//if the item's length is greater than the item before it, put it in a new array
+
+//put the first item in a new array
+//then iterate through items in each array: 
+//if the current item in the initial array is greater than or equal to the item in the new array, add it to the new array
 //print the last item in the new array
 
+var test = ["long phrase","longest phrase","longer phrase"]
+var words = ["one", "two", "three", "fourteen", "four", "five", "seven", "six"];
 
 
-var words = ["one", "two", "three", "four", "five", "six", "seven"];
-var newArray = []
-
-
-for (var i = 0; i < words.length; i++) {  //iterate through the array of words
-
+function wordLength(array) {
+	var newArray = [];
+	newArray.push('');
+	for (var i = 0; i < array.length-1; i++) {  
+		if (array[i].length >= newArray[i].length) {
+		newArray.push(array[i]);
+		};
+	};
+	console.log(newArray[newArray.length-1]);	
 };
-
-
+	 
+wordLength(words);
+wordLength(test);

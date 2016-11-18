@@ -58,7 +58,6 @@ var Person3 = {hair: "grey", age: 77, allergies: true}
 function shareCheck(obj1, obj2) {
 	for (var prop in obj1) {
 		obj1Prop = ''
-		pairFound = false
 		if (obj2.hasOwnProperty(prop)) { //if object 2 has the current property of item 1
 			obj1Prop = prop; //obj1Prop will equal the property that both objects have in common
 			if (obj1[obj1Prop] == obj2[obj1Prop]) {  //if the above checks out, and the value of object 1 = the value of the same property as object 1, return true 
@@ -73,8 +72,18 @@ function shareCheck(obj1, obj2) {
 
 console.log(shareCheck(Person1, Person2))
 console.log(shareCheck(Person1, Person3))
+console.log(shareCheck(test, Person3))
 
-//NOT SURE WHY BOTH LINES OF DRIVER CODE RETURN FALSE
+
+function test(int) {
+
+
+
+}
+
+
+
+
 
 
 

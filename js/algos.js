@@ -75,11 +75,49 @@ console.log(shareCheck(Person1, Person3))
 console.log(shareCheck(test, Person3))
 
 
-function test(int) {
+//the function takes an integer
+//creates an array with as many items in it, or pushes a word as many times
+//the items are words which are a random length between 1 and 10 letters long
+
+//create an empty array
+//create a for loop that says while i is <= the integer passed in
+	//add a word to the array i times
+	//create a new word
+		//for a random number of times between 1 and 10, create a new letter and add it to the word:
+		//to create a new letter and add it x amount of times, create a variable for the alphabet and choose a letter from this var at random, add to the word
+		//add that word to the array
+		//return the array
+
+//do this (int) amount of times:
+//create a new word of a random amount of letters.
+//add it to an empty array
 
 
 
-}
+function testArray(int) {
+	var newArray = [];
+	for (var i = 0; i <= int-1; i++) {
+		var randomNumberBetween1and10 = Math.ceil(Math.random() * 10);
+		var newWord = '';
+		for (var n = 1; n <= randomNumberBetween1and10; n++) {  //for a random number of times between 1 and 10, create a new letter and add it to the word:
+			var alphabet = "abcdefghijklmnopqrstuvwxyz";
+			newWord += alphabet[Math.floor(Math.random() * 26)]; //create new word
+		}
+		newArray[i] = newWord  //add new word to the array. Do this int number of times.
+	}	
+	return newArray; //return the array
+};
+
+console.log(testArray(3))
+
+//perform the function 10 times:
+	//each time: generate and print the array, feed this to wordLength function and print the result
+
+for (var i = 0; i <= 10; i++) {
+	console.log(wordLength(testArray(5)));
+};
+
+//WHY DOES THIS PRINT UNDEFINED EVERY OTHER TIME?
 
 
 

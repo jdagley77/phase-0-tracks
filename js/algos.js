@@ -5,8 +5,8 @@
 //then iterate through items in each array: 
 //if the current item in the initial array is greater than or equal to the item in the new array, add it to the new array
 //print the last item in the new array
-var test = ["long phrase","longest phrase","longer phrase"];
-var words = ["one", "two", "three", "fourteen", "four", "five", "seven", "six"];
+var test = ['long phrase','longest phrase','longer phrase'];
+var words = ['one', 'two', 'three', 'fourteen', 'four', 'five', 'seven', 'six'];
 
 
 //function wordLength(array) {
@@ -51,9 +51,9 @@ console.log(wordLength(test));
 
 
 
-var Person1 = {hair: "brown", age: 29, weight: 180};
-var Person2 = {hair: "blonde", age: 29, weight: 189};
-var Person3 = {hair: "grey", age: 77, allergies: true};
+var Person1 = {hair: 'brown', age: 29, weight: 180};
+var Person2 = {hair: 'blonde', age: 29, weight: 189};
+var Person3 = {hair: 'grey', age: 77, allergies: true};
 
 function shareCheck(obj1, obj2) {
 	for (var prop in obj1) {
@@ -63,8 +63,8 @@ function shareCheck(obj1, obj2) {
 			if (obj1[prop] == obj2[prop]) {  //if the above checks out, and the value of object 1 = the value of the same property as object 1, return true 
 			pairFound = true; //if the key and value pair of each object matches, pairFound is true
 			} 
-		} 
-		else { pairFound = false; 
+		} else { 
+			pairFound = false; 
 		}
 	}
 	return pairFound;
@@ -98,10 +98,10 @@ console.log(shareCheck(test, Person3));
 function testArray(int) {
 	var newArray = [];
 	for (var i = 0; i <= int-1; i++) {
-		var randomNumberBetween1and10 = Math.ceil(Math.random() * 10);
-		var newWord = '';
+		var randomNumberBetween1and10 = Math.ceil(Math.random() * 10), 
+		newWord = '';
 		for (var n = 1; n <= randomNumberBetween1and10; n++) {  //for a random number of times between 1 and 10, create a new letter and add it to the word:
-			var alphabet = "abcdefghijklmnopqrstuvwxyz";
+			var alphabet = 'abcdefghijklmnopqrstuvwxyz';
 			newWord += alphabet[Math.floor(Math.random() * 26)]; //create new word
 		};
 		newArray[i] = newWord  //add new word to the array. Do this int number of times.

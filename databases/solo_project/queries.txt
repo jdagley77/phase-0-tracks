@@ -1,0 +1,67 @@
+Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM yogis;
+1|B K S Iyengar|Iyengar Yoga
+2|Sri Sri Ravi Shankar|Art of Living
+3|Paramahansa Yogananda|Self Realization Fellowship
+sqlite>
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE yogas SET name="Suzie Seller" WHERE name="Suzy Sellers";
+sqlite> SELECT * FROM yogas;
+1|John Smith|8/15/87|6|false|3
+2|Suzie Seller|5/14/00|5|false|2
+3|Ron Harper|3/9/99|3|true|1
+4|Bill Wennington|4/12/01|10|false|1
+5|Julius Kahn|4/5/66|25|true|2
+sqlite>
+
+Display the information in both tables using one query.
+
+sqlite> SELECT * FROM yogas JOIN yogis ON yogas.yogi_id=yogis.id;
+1|John Smith|8/15/87|6|false|3|3|Paramahansa Yogananda|Self Realization Fellowship
+2|Suzie Seller|5/14/00|5|false|2|2|Sri Sri Ravi Shankar|Art of Living
+3|Ron Harper|3/9/99|3|true|1|1|B K S Iyengar|Iyengar Yoga
+4|Bill Wennington|4/12/01|10|false|1|1|B K S Iyengar|Iyengar Yoga
+5|Julius Kahn|4/5/66|25|true|2|2|Sri Sri Ravi Shankar|Art of Living
+sqlite>
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT yogas.name, yogas.date_of_birth, yogis.name, yogis.specialty FROM yogas JOIN yogis ON yogas.yogi_id=yogis.id;
+John Smith|8/15/87|Paramahansa Yogananda|Self Realization Fellowship
+Suzie Seller|5/14/00|Sri Sri Ravi Shankar|Art of Living
+Ron Harper|3/9/99|B K S Iyengar|Iyengar Yoga
+Bill Wennington|4/12/01|B K S Iyengar|Iyengar Yoga
+Julius Kahn|4/5/66|Sri Sri Ravi Shankar|Art of Living
+sqlite>
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM yogas WHERE name="Julius Kahn";
+sqlite> SELECT * FROM yogas;
+1|John Smith|8/15/87|6|false|3
+2|Suzie Seller|5/14/00|5|false|2
+3|Ron Harper|3/9/99|3|true|1
+4|Bill Wennington|4/12/01|10|false|1
+sqlite>
+
+JOINS
+
+sqlite> SELECT yogas.name, yogas.years_practicing, yogis.specialty FROM yogas LEFT OUTER JOIN yogis ON yogas.yogi_id=yogis.id;
+John Smith|6|Self Realization Fellowship
+Suzie Seller|5|Art of Living
+Ron Harper|3|Iyengar Yoga
+Bill Wennington|10|Iyengar Yoga
+sqlite>
+
+sqlite> SELECT yogas.name, yogas.years_practicing, yogis.name FROM yogas INNER JOIN yogis ON yogas.yogi_id=yogis.id;
+John Smith|6|Paramahansa Yogananda
+Suzie Seller|5|Sri Sri Ravi Shankar
+Ron Harper|3|B K S Iyengar
+Bill Wennington|10|B K S Iyengar
+sqlite>
+
+*only inner join and left (outer) joins are supported in sqlite
+

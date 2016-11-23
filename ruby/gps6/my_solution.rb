@@ -95,3 +95,29 @@ end
 
 #=======================================================================
 # Reflection Section
+=begin
+What are the differences between the two different hash syntaxes shown in the state_data file?
+One uses a hash rocket, and the other uses symbols. 
+
+What does require_relative do? How is it different from require?
+require_relative links another file within the same directory. require would link a file outside
+of the current directory. require would require the path name. Both grant you access to data within
+another file.
+
+What are some ways to iterate through a hash?
+You can iterate through a hash using a .each, using 2 params, one for key and one for value.
+You could also use .each_key or .each_value to iterate through keys/values specifically.
+
+When refactoring virus_effects, what stood out to you about the variables, if anything?
+If you're using other methods in the class within a method, see if the other methods are already using 
+instance variables, and what they're doing. The point of instance variables is to leverage them 
+across different methods in the class, so its important to keep in mind how they're being
+using in other methods in the class.
+
+What concept did you most solidify in this challenge?
+-iterating through hashes, specifically how to access hash values within a loop.
+-how to use driver code
+-benefits of using instance variables
+
+=end
+

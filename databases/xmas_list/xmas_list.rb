@@ -30,7 +30,7 @@ def add_item(db, first_name, interests, age, gift, purchased=false)
 	db.execute(new_item)
 end
 
-
+add_item(db, "Caroline", "soccer", 26, "ball")
 
 =begin
 def view_list 

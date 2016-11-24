@@ -12,11 +12,11 @@ db = SQLite3::Database.new("list.db")
 
 
 create_new_list = <<-SQL
-  CREATE TABLE IF NOT EXISTS list(
+  CREATE TABLE IF NOT EXISTS list (
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
     interests VARCHAR(255),
-    age INT,
+    age INTEGER,
     gift VARCHAR(255),
     purchased BOOLEAN
   )
@@ -24,13 +24,12 @@ SQL
 
 db.execute(create_new_list)
 
-def add_item(db, first_name, interests, age, gift, purchased=false)
-	new_item = "INSERT INTO list (name, interests, age, gift, purchased) 
-		VALUES (?, ?, ?, ?, ?)", [first_name, interests, age, gift, purchased]
-	db.execute(new_item)
+def add_item(db, first_name, interests, age, gift, purchased)
+db.execute("INSERT INTO list (name, interests, age, gift, purchased) 
+VALUES (?, ?, ?, ?, ?)", [first_name, interests, age, gift, purchased])
 end
 
-add_item(db, "Caroline", "soccer", 26, "ball")
+add_item(db, "Mom", "gardening", 55, "gardening tools", "false")
 
 =begin
 def view_list 
@@ -39,6 +38,8 @@ def view_list
 	SQL
 end
 =end
+
+
 
 #ask user questions and then add the data to the list table when done
 =begin

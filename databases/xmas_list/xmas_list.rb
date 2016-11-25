@@ -33,6 +33,7 @@ add_item(db, "Mom", "gardening", 55, "gardening tools", "false")
 
 =begin
 def view_list 
+	puts "Here's your list: "
 	<<-SQL 
 	SELECT * FROM list.db
 	SQL
@@ -63,6 +64,9 @@ puts "Please enter a gift that comes to mind for this person."
 gift = gets.chomp
 
 add_item(db, first_name, interests, age, gift, purchased=false)
+
+view_list
+
 end
 =end
 

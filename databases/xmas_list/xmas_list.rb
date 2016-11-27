@@ -9,6 +9,7 @@
 require 'sqlite3'
 
 db = SQLite3::Database.new("list.db")
+#db.results_as_hash = true
 
 
 create_new_list = <<-SQL
@@ -37,10 +38,16 @@ p view_list_cmd
 
 
 #show the list in a user-friendly fashion
-def display 
+puts "Here's your list so far: "
+	view_list_cmd.each do |row|
+		#puts "#{row}\n" 
+		
+		puts "#{row[1]} - #{row[2]} - #{row[4]}"
+		#puts "interests: #{row[2]}\n"
+		#puts "gift ideas: #{row[4]}\n"
+	end
 	
 
-end
 
 
 

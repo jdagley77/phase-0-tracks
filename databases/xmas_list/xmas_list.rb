@@ -34,7 +34,7 @@ end
 
 
 view_list_cmd = db.execute("SELECT * FROM list")
-p view_list_cmd
+#p view_list_cmd
 
 
 #show the list in a user-friendly fashion

@@ -13,6 +13,9 @@ function colorToGreen(event) {
   event.target.style.color = 'green';
 }
 
+function biggerFont(event) {
+	event.target.style.fontSize = 'xx-large';
+}
 
 
 var photos = document.getElementsByTagName('img');
@@ -24,6 +27,9 @@ photos[i].addEventListener('click', changeBackgroundColor);
 var h1 = document.getElementById('concepts');
 h1.addEventListener('click', colorToRed);
 
-$document.ready(function() {
-	$('#things').on('click',colorToGreen);
-})
+var ul = document.getElementsByTagName('ul');
+ul[0].addEventListener('click', colorToGreen);
+//ul[0].addEventListener('mouseout', colorToRed);
+
+var em = document.getElementsByTagName('em');
+em.addEventListener('click', biggerFont);

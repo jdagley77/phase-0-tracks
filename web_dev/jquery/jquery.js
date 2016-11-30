@@ -31,5 +31,5 @@ var ul = document.getElementsByTagName('ul');
 ul[0].addEventListener('click', colorToGreen);
 //ul[0].addEventListener('mouseout', colorToRed);
 
-var em = document.getElementsByTagName('em');
-em.addEventListener('click', biggerFont);
+var li = document.getElementsByTagName('li');
+li[1].addEventListener('click', biggerFont);
